@@ -1,35 +1,28 @@
 import React, { Component } from "react";
+// import { List, ListItem } from "material-ui/List";
 import logo from "./logo.svg";
+import SearchBox from "./component/SearchBox";
 import "./App.css";
-
-import { connect } from "react-redux";
 
 class App extends Component {
   render() {
-    const { count } = this.props.count;
+    // let { count } = this.props.count;
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Github Manage Page</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button
-          onClick={e => {
-            this.props.dispatch({ type: "PLUS2" });
-          }}
-        >
-          INC: {count}
-        </button>
+        <div className="App-body">
+          <div className="App-left">
+            <p className="App-intro">
+              Put in UserName & SearchWord!!
+            </p>
+            <SearchBox />
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return { count: state.reducer };
-}
-
-export default connect(mapStateToProps)(App);
+export default App;

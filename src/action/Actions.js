@@ -20,7 +20,6 @@ const receiveSearch = results => {
 
 const fetchSearch = (user_name, search_word) => {
   let searchUrl = "https://api.github.com/search/repositories?q=" + search_word + "+user:" + user_name;
-  console.log(searchUrl);
 
   return function(dispatch) {
     dispatch(requestSearch(search_word));

@@ -32,7 +32,6 @@ class SearchBox extends React.Component {
 
   render() {
     const { lists } = this.props;
-    // console.log(lists);
     return (
       <div>
         <TextField

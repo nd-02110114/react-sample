@@ -9,16 +9,70 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 50px;
   padding: 20px;
   color: white;
 }
 
 .App-intro {
+  padding: 20px;
   font-size: large;
 }
 
+.App-info {
+  font-size: 12px;
+}
+
+.App-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.App-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border-right: 1px solid #222;
+}
+
+.App-right {
+  width: 50%;
+}
+
+.App-search {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
+.search-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-result {
+  width: 80%;
+  padding-left: 10%;
+}
+
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  background-color: #222;
+  padding-top: 20px;
+  height: 50px;
+  width: 100%;
+  color: white;
+}
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

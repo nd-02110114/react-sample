@@ -1,9 +1,10 @@
 import React from "react";
 import { List, ListItem } from "material-ui/List";
 import TextField from "material-ui/TextField";
-// import Divider from "material-ui/Divider";
+import Divider from "material-ui/Divider";
 import { connect } from "react-redux";
 import { fetchSearch } from "../action/Actions";
+import "../App.css";
 
 class SearchBox extends React.Component {
   constructor() {
@@ -33,20 +34,26 @@ class SearchBox extends React.Component {
   render() {
     const { lists } = this.props;
     return (
-      <div>
-        <TextField
-          floatingLabelText="User Name"
-          id="search-field"
-          value={this.state.user_name}
-          onChange={this.handleUserNameChange}
-        />
-        <TextField
-          floatingLabelText="Search Word"
-          id="search-field"
-          value={this.state.search_word}
-          onChange={this.handleSearchWordChange}
-        />
+      <div className="App-search">
+        <div className="search-field">
+          <TextField
+            floatingLabelText="User Name"
+            id="search-field"
+            value={this.state.user_name}
+            onChange={this.handleUserNameChange}
+          />
+          <TextField
+            floatingLabelText="RepositoryName"
+            id="search-field"
+            value={this.state.search_word}
+            onChange={this.handleSearchWordChange}
+          />
+        </div>
         <div className="search-result">
+          <p>
+            Results
+          </p>
+          <Divider insert={true} />
           <List>
             {Object.keys(lists).map(function(key, index) {
               return (
@@ -54,6 +61,7 @@ class SearchBox extends React.Component {
                   id={"list-" + index}
                   primaryText={lists[key].repo_name}
                   href={lists[key].repo_url}
+                  target="_blank"
                 />
               );
             })}

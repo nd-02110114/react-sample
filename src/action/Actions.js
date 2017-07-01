@@ -18,7 +18,7 @@ const receiveSearch = results => {
   };
 };
 
-const fetchSearch = (user_name, search_word) => {
+const fetchSearch = (user_name = "", search_word = "") => {
   let searchUrl = "https://api.github.com/search/repositories?q=" + search_word + "+user:" + user_name;
 
   return function(dispatch) {

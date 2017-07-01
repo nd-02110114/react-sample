@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-// import { List, ListItem } from "material-ui/List";
 import logo from "./logo.svg";
 import SearchBox from "./component/SearchBox";
 import "./App.css";
 
 class App extends Component {
   render() {
-    // let { count } = this.props.count;
     return (
       <div className="App">
         <div className="App-header">
@@ -14,11 +12,20 @@ class App extends Component {
         </div>
         <div className="App-body">
           <div className="App-left">
-            <p className="App-intro">
-              Put in UserName & SearchWord!!
-            </p>
+            <div className="App-intro">
+              Put in UserName & RepositoryName!!
+              <p className="App-info">
+                When you put in RepositoryName, Start a search
+              </p>
+            </div>
             <SearchBox />
           </div>
+          <div className="App-right">
+            TEST
+          </div>
+        </div>
+        <div className="app-footer">
+          made by @nissy
         </div>
       </div>
     );

@@ -2,6 +2,8 @@
 Action関連
 */
 
+import TOKEN from "../local.config";
+
 const REQUEST_SEARCH = "REQUEST_SEARCH";
 const requestSearch = text => {
   return {
@@ -18,8 +20,9 @@ const receiveSearch = results => {
   };
 };
 
-const fetchSearch = (user_name = "", search_word = "") => {
-  let searchUrl = "https://api.github.com/search/repositories?q=" + search_word;
+const fetchRepoSearch = search_word => {
+  let searchUrl =
+    "https://api.github.com/search/repositories?q=" + search_word + "&access_token=" + TOKEN.ACCESS_TOKEN;
 
   return function(dispatch) {
     dispatch(requestSearch(search_word));
@@ -30,15 +33,18 @@ const fetchSearch = (user_name = "", search_word = "") => {
       })
       .then(function(json) {
         let results = {};
-        Object.keys(json.items).forEach(function(key) {
-          results = [
-            ...results,
-            {
-              repo_name: json.items[key].full_name,
-              repo_url: json.items[key].html_url
-            }
-          ];
-        });
+        if (json.items !== undefined) {
+          Object.keys(json.items).forEach(function(key) {
+            results = [
+              ...results,
+              {
+                repo_name: json.items[key].full_name,
+                repo_url: json.items[key].html_url
+              }
+            ];
+          });
+        }
+
         return results;
       })
       .then(function(results) {
@@ -47,4 +53,4 @@ const fetchSearch = (user_name = "", search_word = "") => {
   };
 };
 
-export { fetchSearch };
+export { fetchRepoSearch };

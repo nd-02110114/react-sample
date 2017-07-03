@@ -38,6 +38,8 @@
 }
 
 .App-right {
+  display: flex;
+  flex-direction: column;
   width: 50%;
 }
 
@@ -51,6 +53,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.search-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .search-result {

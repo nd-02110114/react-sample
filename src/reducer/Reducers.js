@@ -3,8 +3,8 @@ reducerをまとめてコンバインするところ
 */
 
 import { combineReducers } from "redux";
-import SearchReducer from "./SearchReducer";
+import { RepoSearchReducer, SubsribeSearchReducer } from "./SearchReducer";
 
-const RootReducer = combineReducers({ SearchReducer });
+const RootReducer = combineReducers({ RepoSearchReducer, SubsribeSearchReducer });
 
 export default RootReducer;

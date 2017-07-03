@@ -9,6 +9,8 @@ import App from "./App";
 import RootReducer from "./reducer/Reducers";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import injectTapEventPlugin from "react-tap-event-plugin";
+injectTapEventPlugin();
 
 const store = createStore(RootReducer, applyMiddleware(thunkMiddleware, createLogger));
 

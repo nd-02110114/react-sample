@@ -2,37 +2,35 @@ import React from "react";
 import { List, ListItem } from "material-ui/List";
 import TextField from "material-ui/TextField";
 import Divider from "material-ui/Divider";
+import RaisedButton from "material-ui/RaisedButton";
 import { connect } from "react-redux";
-import { fetchSearch } from "../action/Actions";
+import { fetchSubscribeSearch } from "../action/SubscribeAction";
 import "../App.css";
 
-class SearchBox extends React.Component {
-  constructor() {
-    super();
-
+class SubscribeBox extends React.Component {
+  constructor(props) {
+    super(props);
     this.state = {
-      user_name: "",
-      search_word: ""
+      user_name: ""
     };
+
+    this.handleUserNameChange = this.handleUserNameChange.bind(this);
+    this.searchSubcribeRepository = this.searchSubcribeRepository.bind(this);
   }
 
-  handleUserNameChange = event => {
+  searchSubcribeRepository() {
+    const { onSearch } = this.props;
+    onSearch(this.state.user_name);
+  }
+
+  handleUserNameChange(event) {
     this.setState({
       user_name: event.target.value
     });
-  };
-
-  handleSearchWordChange = event => {
-    const { onSearch } = this.props;
-    onSearch(this.state.user_name, event.target.value);
-
-    this.setState({
-      search_word: event.target.value
-    });
-  };
+  }
 
   render() {
-    const { lists } = this.props;
+    const { lists, onSearch } = this.props;
     return (
       <div className="App-search">
         <div className="search-field">
@@ -42,12 +40,13 @@ class SearchBox extends React.Component {
             value={this.state.user_name}
             onChange={this.handleUserNameChange}
           />
-          <TextField
-            floatingLabelText="RepositoryName"
-            id="search-field"
-            value={this.state.search_word}
-            onChange={this.handleSearchWordChange}
-          />
+          <div className="search-btn">
+            <RaisedButton
+              label="Confirm a watch list"
+              primary={true}
+              onTouchTap={() => this.searchSubcribeRepository()}
+            />
+          </div>
         </div>
         <div className="search-result">
           <p>
@@ -73,13 +72,13 @@ class SearchBox extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { lists: state.SearchReducer.lists };
+  return { lists: state.SubsribeSearchReducer.lists };
 }
 
 const mapDispatchToProps = dispatch => ({
-  onSearch(user_name, search_word) {
-    dispatch(fetchSearch(user_name, search_word));
+  onSearch(user_name) {
+    dispatch(fetchSubscribeSearch(user_name));
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);
+export default connect(mapStateToProps, mapDispatchToProps)(SubscribeBox);

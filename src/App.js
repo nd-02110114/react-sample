@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import SearchBox from "./component/SearchBox";
+import RepoSearch from "./component/RepoSearch";
+import SubscribeBox from "./component/SubscribeSearch";
 import "./App.css";
 
 class App extends Component {
@@ -13,15 +13,21 @@ class App extends Component {
         <div className="App-body">
           <div className="App-left">
             <div className="App-intro">
-              Put in UserName & RepositoryName!!
+              Search Repository
               <p className="App-info">
                 When you put in RepositoryName, Start a search
               </p>
             </div>
-            <SearchBox />
+            <RepoSearch />
           </div>
           <div className="App-right">
-            TEST
+            <div className="App-intro">
+              Confirm your watch list
+              <p className="App-info">
+                When you put in UserName, show a watch list
+              </p>
+            </div>
+            <SubscribeBox />
           </div>
         </div>
         <div className="app-footer">

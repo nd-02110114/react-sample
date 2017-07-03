@@ -20,4 +20,6 @@ $ cp local.config.template.js local.config.js
 また。各リポジトリ名をクリックするとそれぞれ各リポジトリのページに遷移するように実装してあります。
 工夫した点は、Material UIを使用し、見やすいUIを意識しました。
 
-まだ、watch,unwatchの処理が終わっていないですが確認よろしくお願いいたします。
+まだ、watch,unwatchの処理が終わっていないですが確認よろしくお願いいたします。また以下のページを参考にAPIを叩いてunwatch,watchの切り替えをすることまではわかりましたが、それ以降がまだ時間がなくて進んでいません。
+
+https://developer.github.com/v3/activity/watching/#set-a-repository-subscription

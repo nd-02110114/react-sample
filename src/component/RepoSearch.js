@@ -1,7 +1,6 @@
 import React from "react";
 import { List, ListItem } from "material-ui/List";
 import TextField from "material-ui/TextField";
-import Checkbox from "material-ui/Checkbox";
 import Divider from "material-ui/Divider";
 import { connect } from "react-redux";
 import { fetchRepoSearch } from "../action/RepoActions";

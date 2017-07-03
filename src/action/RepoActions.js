@@ -4,18 +4,18 @@ Action関連
 
 import TOKEN from "../local.config";
 
-const REQUEST_SEARCH = "REQUEST_SEARCH";
+const REPO_REQUEST_SEARCH = "REPO_REQUEST_SEARCH";
 const requestSearch = text => {
   return {
-    type: REQUEST_SEARCH,
+    type: REPO_REQUEST_SEARCH,
     text: text
   };
 };
 
-const RECEIVE_RESULTS = "RECEIVE_RESULTS";
+const REPO_RECEIVE_RESULTS = "REPO_RECEIVE_RESULTS";
 const receiveSearch = results => {
   return {
-    type: RECEIVE_RESULTS,
+    type: REPO_RECEIVE_RESULTS,
     results: results
   };
 };

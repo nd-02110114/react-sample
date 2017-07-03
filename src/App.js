@@ -13,7 +13,7 @@ class App extends Component {
         <div className="App-body">
           <div className="App-left">
             <div className="App-intro">
-              Put in RepositoryName!!
+              Search Repository
               <p className="App-info">
                 When you put in RepositoryName, Start a search
               </p>
@@ -22,11 +22,12 @@ class App extends Component {
           </div>
           <div className="App-right">
             <div className="App-intro">
-              Put in UserName!!
+              Confirm your watch list
               <p className="App-info">
-                When you put in UserName, Confirm a watch repository
+                When you put in UserName, show a watch list
               </p>
             </div>
+            <SubscribeBox />
           </div>
         </div>
         <div className="app-footer">

@@ -55,6 +55,11 @@
   align-items: center;
 }
 
+.search-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .search-result {
   width: 80%;
   padding-left: 10%;

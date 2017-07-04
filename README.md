@@ -6,7 +6,7 @@ Herokuにdeployしました
 
 ## DEMO
 
-![](https://github.com/nd-02110114/react-sample/test-animation.gif)
+![](https://raw.githubusercontent.com/nd-02110114/react-sample/master/test-animation.gif)
 
 
 ### Personal Access Tokenの準備

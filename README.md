@@ -4,6 +4,11 @@ Herokuにdeployしました
 
 [Github Manage Page](https://fast-anchorage-30086.herokuapp.com/)
 
+## DEMO
+
+![](https://github.com/nd-02110114/react-sample/test-animation.gif)
+
+
 ### Personal Access Tokenの準備
 
 srcファイルと同じ階層にlocal.config.jsを配置して、

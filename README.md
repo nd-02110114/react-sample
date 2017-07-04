@@ -7,7 +7,8 @@ Herokuにdeployしました
 ### Personal Access Tokenの準備
 
 srcファイルと同じ階層にlocal.config.jsを配置して、
-local.config.jsのACCESS_TOKENに自分の取得したTOKENを入れて以下のコマンドをたたけば準備完了
+local.config.templete.jsのACCESS_TOKENに自分の取得したTOKENを入れて以下のコマンドをたたけば準備完了
+Copyしたら、忘れずにlocal.config.templete.jsのACCESS_TOKENを削除する。
 
 ```
 $ cp local.config.template.js local.config.js
